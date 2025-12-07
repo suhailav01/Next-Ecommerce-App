@@ -1,6 +1,7 @@
+"use client"
 import React from 'react'
-import styles from '../Products/products.module.css'
-import  Link  from 'next/link'
+import styles from '../products/products.module.css'
+import Link from 'next/link'
 function Furniture() {
   let furniture = [
     {
@@ -180,7 +181,7 @@ function Furniture() {
             <span className={styles.count}>({p.rating.count} reviews)</span>
           </div>
 
-          <Link href={`/fur/${p.id}`} state={{furniture:p}}>
+          <Link href={`/fur/${p.id}`} state={{ furniture: p }}>
             <button className={styles.btn}>View Details</button>
           </Link>
         </div>
