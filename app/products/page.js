@@ -1,8 +1,15 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import styles from "../products/products.module.css";
+
 export default async function Products() {
-  const res = await fetch("https://fakestoreapi.com/products");
+  const res = await fetch("https://fakestoreapi.com/products", {
+    cache: "no-store",
+  });
+
   const products = await res.json();
+
   return (
     <div style={{ marginTop: "150px" }} className={styles.container}>
       {products?.map((p) => (
