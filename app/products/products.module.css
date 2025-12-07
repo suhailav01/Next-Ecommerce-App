@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  width: 220px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+  position: relative;
+}
+
+/* Hover animation */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.20);
+}
+
+/* PRODUCT IMAGE */
+.imageBox {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+/* Zoom animation */
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* DETAILS */
+.details {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.category {
+  color: #777;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.rating {
+  color: green;
+  font-weight: 600;
+}
+
+.count {
+  color: #555;
+  font-size: 13px;
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  padding: 8px 0;
+  background: goldenrod;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056d2;
+  transform: scale(1.03);
+}

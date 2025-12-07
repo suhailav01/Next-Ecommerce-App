@@ -1,0 +1,100 @@
+/* ---------- MAIN CONTAINER ---------- */
+.container {
+   min-height: 600px;
+   /* background: linear-gradient(135deg, #abecee, #cfd4d6); */
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 20px 50px;
+   border-radius: 18px;
+   padding: 50px;
+}
+
+
+/* ---------- CONTACT CARD ---------- */
+.inputside {
+   width: 420px;
+   background: rgba(255, 255, 255, 0.85);
+   border-radius: 25px;
+   padding: 35px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+   box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+   backdrop-filter: blur(5px);
+   transition: transform 0.3s ease;
+}
+
+.inputside:hover {
+   transform: translateY(-5px);
+}
+
+
+/* ---------- INPUT BOX ---------- */
+.input_area {
+   width: 320px;
+   padding: 14px 18px;
+   background: #f5f5f5;
+   border-radius: 15px;
+   display: flex;
+   align-items: center;
+   transition: 0.3s;
+   border: 2px solid transparent;
+}
+
+.input_area:focus-within {
+   border-color: #1d3557;
+   background: white;
+   box-shadow: 0px 0px 12px rgba(29, 53, 87, 0.3);
+}
+
+
+/* ---------- INPUT FIELDS ---------- */
+.input,
+.input_msg {
+   width: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   font-size: 15px;
+   color: #333;
+}
+
+.input_msg {
+   height: 70px;
+   resize: none;
+}
+
+.input::placeholder,
+.input_msg::placeholder {
+   font-style: italic;
+   color: #777;
+}
+
+
+/* ---------- SUBMIT BUTTON ---------- */
+.button {
+   width: 160px;
+   padding: 12px;
+   margin-top: 10px;
+   border-radius: 20px;
+   border: none;
+   background: linear-gradient(135deg, #2a9d8f, #1d6f63);
+   color: white;
+   font-weight: 600;
+   font-size: 16px;
+   cursor: pointer;
+   transition: 0.3s ease;
+   box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+.button:hover {
+   background: linear-gradient(135deg, #2ec4b6, #1d6f63);
+   transform: scale(1.05);
+}
+
+.button:active {
+   transform: scale(0.95);
+}
