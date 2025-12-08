@@ -1,4 +1,5 @@
 "use client";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../Nav/header.css'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -8,9 +9,9 @@ function Header() {
   return (
     <nav className="navbar navbar-expand-lg   py-2 shadow-lg fixed-top">
       <div className="container-fluid d-flex justify-content-around p-0">
-          <button style={{border:"none",outline:"none"}} onClick={()=>router.push('/')} className='logo'>NexStore</button>
-         <button
-          style={{ color: "white", backgroundColor: "white" }}
+        <button style={{ border: "none", outline: "none" }} onClick={() => router.push('/')} className='logo'>NexStore</button>
+        <button
+          style={{ color: "black", backgroundColor: "white" }}
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -32,7 +33,7 @@ function Header() {
               type="search"
               placeholder="Search products..."
               aria-label="Search"
-              style={{ width: "400px", border: "none", outline: "none", padding: "13px", paddingLeft: "40px",backgroundColor:"whitesmoke" }}
+              style={{ width: "400px", border: "none", outline: "none", padding: "13px", paddingLeft: "40px", backgroundColor: "whitesmoke" }}
 
             />
 

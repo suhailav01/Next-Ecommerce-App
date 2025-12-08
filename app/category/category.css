@@ -65,3 +65,10 @@
   /* color: #0057ff !important; */
   color: white;
 }
+
+/* @media (max-width: 1010px) {
+  .clean-category-bar {
+    height: 60px;
+    background-color: red;
+  }
+} */
