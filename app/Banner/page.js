@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 function Banner() {
     const route = useRouter();
   return (
-     <Carousel style={{margin:"130px 5px 5px "}}>
+     <Carousel style={{margin:"120px 5px 5px "}}>
       <Carousel.Item>
         <img onClick={() => route.push('/products')} height={300} className="d-block w-100" src="https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/5b309e98775e22e4.jpg?q=80" alt="Banner 2" />
       </Carousel.Item>

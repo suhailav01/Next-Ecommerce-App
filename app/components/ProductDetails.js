@@ -10,81 +10,32 @@ export default function ProductDetails({ product }) {
     dispatch(addToCart(product))
   }
   return (
-     <div
+    <div className="container product-card p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-center">
+      
+  {/* Product Image */}
+  <div className="product-image-wrapper mb-4 mb-md-0">
+    <img
+      src={product.image}
+      alt={product.title}
+      className="product-image"
+    />
+  </div>
 
-      className="container  p-5 d-flex flex-column flex-md-row align-items-center justify-content-center"
-      style={{
-        background: "white",
-        borderRadius: "15px",
-        boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
-        padding: "40px",
-        transition: "0.3s ease",
-        marginTop: "150px"
-      }}
-    >
-      {/* Product Image */}
-      <div
-        style={{
-          padding: "20px",
-          borderRadius: "15px",
-          background: "#f7f7f7",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-          transition: "0.3s",
-        }}
-        className="hover-img"
-      >
-        <img
-          src={product.image}
-          alt={product.title}
-          style={{ width: "300px", height: "400px", objectFit: "contain" }}
-        />
-      </div>
+  {/* Product Details */}
+  <div className="ms-md-4 text-center text-md-start product-details">
+    <h2>{product.title}</h2>
 
-      {/* Product Details */}
-      <div className="ms-md-4 mt-4 mt-md-0" style={{ maxWidth: "500px" }}>
-        <h2 style={{ fontWeight: "700" }}>{product.title}</h2>
+    <p className="description">{product.description}</p>
 
-        <p style={{ color: "#6c757d", fontSize: "15px", lineHeight: "1.6" }}>
-          {product.description}
-        </p>
+    <span className="category">{product.category}</span>
 
-        <span
-          style={{
-            backgroundColor: "#eef2ff",
-            padding: "5px 12px",
-            borderRadius: "20px",
-            color: "#4f46e5",
-            fontSize: "14px",
-          }}
-        >
-          {product.category}
-        </span>
+    <h3 className="price mt-3">${product.price}</h3>
 
-        <h3 className="mt-3" style={{ fontWeight: "700", color: "#1e40af" }}>
-          ${product.price}
-        </h3>
+    <button className="add-btn" onClick={addToHandelCart}>
+      Add to Cart
+    </button>
+  </div>
+</div>
 
-        <button
-          onClick={addToHandelCart}
-          style={{
-            marginTop: "15px",
-            backgroundColor: "#22c55e",
-            padding: "10px 20px",
-            borderRadius: "10px",
-            border: "none",
-            color: "white",
-            cursor: "pointer",
-            fontSize: "16px",
-            fontWeight: "600",
-            boxShadow: "0 4px 10px rgba(34,197,94,0.3)",
-            transition: "0.3s",
-          }}
-          onMouseOver={(e) => (e.target.style.transform = "scale(1.05)")}
-          onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
-        >
-          Add to Cart
-        </button>
-      </div>
-    </div>
   )
 }

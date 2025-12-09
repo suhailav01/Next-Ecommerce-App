@@ -32,7 +32,7 @@ function Header() {
               type="search"
               placeholder="Search products..."
               aria-label="Search"
-              style={{ width: "400px", border: "none", outline: "none", padding: "13px", paddingLeft: "40px", backgroundColor: "whitesmoke" }}
+              style={{ width: "400px", border: "none", outline: "none", padding: "13px",  paddingLeft: "40px", backgroundColor: "whitesmoke" }}
 
             />
 

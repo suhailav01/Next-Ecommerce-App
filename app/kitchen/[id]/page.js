@@ -147,45 +147,32 @@ export default function page(props) {
         )
     }
     return (
-        <div
-            style={{
-                marginTop: "150px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "40px",
-            }}
-        >
-            {/* IMAGE */}
-            <div>
-                <img
-                    src={product.image}
-                    alt={product.title}
-                    style={{ width: "350px", borderRadius: "10px" }}
-                />
-            </div>
+       <div className="container product-card p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-center">
+      
+  {/* Product Image */}
+  <div className="product-image-wrapper mb-4 mb-md-0">
+    <img
+      src={product.image}
+      alt={product.title}
+      className="product-image"
+    />
+  </div>
 
-            {/* DETAILS */}
-            <div>
-                <h1>{product.title}</h1>
-                <h3>Brand: {product.brand}</h3>
-                <h2 style={{ color: "green" }}>${product.price}</h2>
-                <p style={{ fontSize: "20px" }}>⭐ {product.rating}</p>
+  {/* Product Details */}
+  <div className="ms-md-4 text-center text-md-start product-details">
+    <h2>{product.title}</h2>
 
-                <button
-                onClick={addToHandleCart}
-                    style={{
-                        padding: "10px 20px",
-                        backgroundColor: "black",
-                        color: "white",
-                        borderRadius: "8px",
-                        border: "none",
-                        marginTop: "15px",
-                    }}
-                >
-                    Add to Cart
-                </button>
-            </div>
-        </div>
+    <p className="description">{product.description}</p>
+
+    <span className="category">{product.category}</span>
+
+    <h3 className="price mt-3">${product.price}</h3>
+
+    <button className="add-btn" onClick={addToHandleCart}>
+      Add to Cart
+    </button>
+  </div>
+</div>
+
     )
 }

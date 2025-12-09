@@ -71,6 +71,7 @@
 .input_msg::placeholder {
    font-style: italic;
    color: #777;
+   padding-left: 10px;
 }
 
 

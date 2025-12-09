@@ -56,7 +56,7 @@ export default function Category() {
   // };
   return (
     <div
-      style={{ marginTop: "61px", width: "auto" }}
+      style={{ marginTop: "62px", width: "auto" }}
       className="clean-category-bar container-fluid d-flex justify-content-around align-items-center fixed-top"
     >
       {category?.slice(0, 10).map((p) => (
