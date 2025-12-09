@@ -5,7 +5,7 @@ import styles from "../products/products.module.css";
 
 export default async function Products() {
   try {
-    const res = await fetch("https://fakestoreapi.com/products", {
+   const res = await fetch(process.env.NEXT_PUBLIC_FAKESTORE_API, {
       next: { revalidate: 0 },
     });
 
