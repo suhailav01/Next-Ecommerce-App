@@ -5,21 +5,17 @@ import styles from "../products/products.module.css";
 
 export default async function Products() {
   try {
-    const res = await fetch("https://fakestoreapi.com/products", {
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
+    const res = await fetch(`${baseURL}/api/products`, {
       cache: "no-store",
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch FakeStore API");
+      throw new Error("Failed to fetch Products API");
     }
 
-    let products;
-
-    try {
-      products = await res.json();
-    } catch (jsonErr) {
-      throw new Error("Invalid JSON returned from FakeStore API");
-    }
+    const products = await res.json();
 
     return (
       <div style={{ marginTop: "150px" }} className={styles.container}>
