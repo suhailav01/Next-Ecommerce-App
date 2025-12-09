@@ -1,7 +1,8 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-import Header from "./Nav/page";
+import Header from "./Nav/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Category from "./category/page";
 import Footer from "./Footer/Footer";
@@ -25,12 +26,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <Providers>
+         {/* ✅ Bootstrap JS loads only on browser, never server */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          strategy="beforeInteractive"
+        />
+
+        <Providers>
           <Header />
           <Category />
           {children}
-          <Footer/>
-          </Providers>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 "use client";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../Nav/header.css'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
