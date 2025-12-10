@@ -1,10 +1,12 @@
 "use client";
+import { usePathname } from 'next/navigation';
 import '../Nav/header.css'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FaSearch } from 'react-icons/fa';
 function Header() {
-  const router = useRouter()
+  const router = useRouter();
+  const pathname = usePathname();
   return (
     <nav className="navbar navbar-expand-lg   py-2 shadow-lg fixed-top">
       <div className="container-fluid d-flex justify-content-around p-0">
@@ -32,7 +34,7 @@ function Header() {
               type="search"
               placeholder="Search products..."
               aria-label="Search"
-              style={{ width: "400px", border: "none", outline: "none", padding: "13px",  paddingLeft: "40px", backgroundColor: "whitesmoke" }}
+              style={{ width: "400px", border: "none", outline: "none", padding: "13px", paddingLeft: "40px", backgroundColor: "whitesmoke" }}
 
             />
 
@@ -41,23 +43,23 @@ function Header() {
           {/* Menu Items */}
           <ul className="navbar-nav ms-auto ">
             <li className="nav-item ">
-              <Link href={"/"} className="nav-link px-3 text-black">Home</Link>
+              <Link href={"/"} className={`nav-link px-3 ${pathname === "/" ? "active-link" : "text-black"}`}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link href={"/products"} className="nav-link px-3 text-black ">Products</Link>
+              <Link href={"/products"} className={`nav-link px-3 ${pathname === "/products" ? "active-link" : "text-black"}`}>Products</Link>
             </li>
             <li className="nav-item">
-              <Link href={'/contact'} className="nav-link px-3 text-black " >Contact</Link>
+              <Link href={'/contact'} className={`nav-link px-3 ${pathname === "/contact" ? "active-link" : "text-black"}`} >Contact</Link>
             </li>
 
             <li className="nav-item">
-              <Link href={'/about'} className="nav-link px-3 text-black" >About</Link>
+              <Link href={'/about'} className={`nav-link px-3 ${pathname === "/about" ? "active-link" : "text-black"}`} >About</Link>
             </li>
             <li className="nav-item">
-              <Link href={'/login'} className="nav-link login px-3 text-black" >👤Login</Link>
+              <Link href={'/login'} className={`nav-link px-3 login ${pathname === "/login" ? "active-link" : "text-black"}`} >👤Login</Link>
             </li>
             <li className="nav-item">
-              <Link href={'/cart'} className="nav-link px-3 text-black position-relative">
+              <Link href={'/cart'} className={`nav-link px-3 ${pathname === "/cart" ? "active-link" : "text-black"}`}>
                 🛒 Cart
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"

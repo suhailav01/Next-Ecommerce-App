@@ -1,13 +1,20 @@
- li {
-     font-size: 15px;
-  font-weight: 600;
-  color: #333;
-  letter-spacing: 1px;
+ .active-link {
+   color: orange !important;
+   font-weight: 900;
  }
-li:hover{
-  color: #007bff;
-}
-/* .logo {
+
+ li {
+   font-size: 15px;
+   font-weight: 600;
+   color: #333;
+   letter-spacing: 1px;
+ }
+
+ li:hover {
+   color: #007bff;
+ }
+
+ /* .logo {
   font-size: 40px;
   font-weight: 900;
   padding-left: 30px;
@@ -17,19 +24,19 @@ li:hover{
   font-family: "Montserrat", sans-serif;
   letter-spacing: 3px;
 } */
-.logo {
-  font-size: 30px;
-  font-weight: 900;
-  padding-left: 40px;
-  background: linear-gradient(45deg, #ff4e50, #f9d423);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 1px;
-  font-style: italic;
-}
+ .logo {
+   font-size: 30px;
+   font-weight: 900;
+   padding-left: 40px;
+   background: linear-gradient(45deg, #ff4e50, #f9d423);
+   -webkit-background-clip: text;
+   color: transparent;
+   font-family: "Montserrat", sans-serif;
+   letter-spacing: 1px;
+   font-style: italic;
+ }
 
-/* .logo {
+ /* .logo {
   font-size: 40px;
   font-weight: 900;
   padding-left: 30px;
@@ -53,37 +60,40 @@ li:hover{
 
 
  .input {
-     background-color: rgb(209, 43, 43);
+   background-color: rgb(209, 43, 43);
  }
 
  nav {
-      /* background: rgb(10, 42, 67);  */
-     background-color: white;
-       /* background: linear-gradient(135deg, #a1c4fd, #c2e9fb); */
+   /* background: rgb(10, 42, 67);  */
+   background-color: white;
+   /* background: linear-gradient(135deg, #a1c4fd, #c2e9fb); */
 
  }
- /* ACTIVE LINK - ORANGE */
-.nav-link.active {
-  color: orange !important;
-  font-weight: 600;
-}
-.login{
-  border-radius: 15px;
-}
-.login:hover {
-  background-color: rgb(0, 105, 217);
-  color: white !important;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-}
 
-/* Optional underline effect */
-.nav-link.active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: orange;
-  margin-top: 2px;
-}
+ /* ACTIVE LINK - ORANGE */
+ .nav-link.active {
+   color: orange !important;
+   font-weight: 600;
+ }
+
+ .login {
+   border-radius: 15px;
+ }
+
+ .login:hover {
+   background-color: rgb(0, 105, 217);
+   color: white !important;
+   border-radius: 15px;
+   border: none;
+   outline: none;
+ }
+
+ /* Optional underline effect */
+ .nav-link.active::after {
+   content: "";
+   display: block;
+   width: 100%;
+   height: 2px;
+   background: orange;
+   margin-top: 2px;
+ }
