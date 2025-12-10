@@ -1,30 +1,20 @@
-
-
 import Link from "next/link";
 import styles from "../products/products.module.css";
 
 export default async function Products() {
   try {
-   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || ""}/api/products`, {
-      next: { revalidate: 0 },
-    });
+    const res = await fetch("https://fakestoreapi.com/products");
 
-    if (!res.ok) {
-      throw new Error(`Failed to fetch products: ${res.status}`);
-    }
+    // if (!res.ok) throw new Error(`Fetch error: ${res.status}`);
 
     const products = await res.json();
 
     if (!Array.isArray(products) || products.length === 0) {
-      return (
-        <div style={{ marginTop: "150px", textAlign: "center" }} className={styles.container}>
-          <p>No products available.</p>
-        </div>
-      );
+      return <div>No products found</div>;
     }
 
     return (
-      <div style={{ marginTop: "150px" }} className={styles.container}>
+      <div className={styles.container} style={{ marginTop: "150px" }}>
         {products.map((p) => (
           <div key={p.id} className={styles.card}>
             <div className={styles.imageBox}>
@@ -36,8 +26,12 @@ export default async function Products() {
               <p className={styles.category}>{p.category}</p>
 
               <div className={styles.ratingBox}>
-                <span className={styles.rating}>{p.rating?.rate ?? "N/A"} ⭐</span>
-                <span className={styles.count}>({p.rating?.count ?? 0} reviews)</span>
+                <span className={styles.rating}>
+                  {p.rating?.rate ?? "N/A"} ⭐
+                </span>
+                <span className={styles.count}>
+                  ({p.rating?.count ?? 0} reviews)
+                </span>
               </div>
 
               <Link href={`/id/${p.id}`} className={`btn ${styles.btn}`}>
@@ -50,10 +44,6 @@ export default async function Products() {
     );
   } catch (error) {
     console.error("Products fetch error:", error);
-    return (
-      <div style={{ marginTop: "150px", textAlign: "center" }} className={styles.container}>
-        <p>Failed to load products. Please try again later.</p>
-      </div>
-    );
+    return <div>Error loading products</div>;
   }
 }
