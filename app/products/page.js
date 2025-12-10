@@ -3,11 +3,10 @@ import styles from "../products/products.module.css";
 
 export default async function Products() {
   try {
-    const res = await fetch("https://fakestoreapi.com/products");
+    const res = await fetch("https://dummyjson.com/products");
 
-    // if (!res.ok) throw new Error(`Fetch error: ${res.status}`);
-
-    const products = await res.json();
+    const data = await res.json();  // rename for clarity
+    const products = data.products; // extract array
 
     if (!Array.isArray(products) || products.length === 0) {
       return <div>No products found</div>;
@@ -18,7 +17,7 @@ export default async function Products() {
         {products.map((p) => (
           <div key={p.id} className={styles.card}>
             <div className={styles.imageBox}>
-              <img className={styles.image} src={p.image} alt={p.title} />
+              <img className={styles.image} src={p.thumbnail} alt={p.title} />
             </div>
 
             <div className={styles.details}>
@@ -26,12 +25,7 @@ export default async function Products() {
               <p className={styles.category}>{p.category}</p>
 
               <div className={styles.ratingBox}>
-                <span className={styles.rating}>
-                  {p.rating?.rate ?? "N/A"} ⭐
-                </span>
-                <span className={styles.count}>
-                  ({p.rating?.count ?? 0} reviews)
-                </span>
+                <span className={styles.rating}>{p.rating} ⭐</span>
               </div>
 
               <Link href={`/id/${p.id}`} className={`btn ${styles.btn}`}>

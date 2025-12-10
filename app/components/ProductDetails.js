@@ -15,7 +15,7 @@ export default function ProductDetails({ product }) {
   {/* Product Image */}
   <div className="product-image-wrapper mb-4 mb-md-0">
     <img
-      src={product.image}
+      src={product.thumbnail}
       alt={product.title}
       className="product-image"
     />
