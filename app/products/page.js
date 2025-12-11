@@ -5,8 +5,8 @@ export default async function Products() {
   try {
     const res = await fetch("https://dummyjson.com/products");
 
-    const data = await res.json();  // rename for clarity
-    const products = data.products; // extract array
+    const data = await res.json();
+    const products = data.products;
 
     if (!Array.isArray(products) || products.length === 0) {
       return <div>No products found</div>;
