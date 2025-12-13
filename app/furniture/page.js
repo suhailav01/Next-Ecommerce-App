@@ -1,7 +1,9 @@
-"use client"
 import React from 'react'
 import styles from '../products/products.module.css'
 import Link from 'next/link'
+export const metadata = {
+  title: "Furniture list"
+}
 function Furniture() {
   let furniture = [
     {

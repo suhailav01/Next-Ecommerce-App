@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from '../products/products.module.css'
 import  Link  from 'next/link'
-// import { addToCart } from '../Redux/cartSlice'
+export const metadata = {
+  title: "MensWatches list"
+}
 function MensWatches() {
     let watches = [
         {

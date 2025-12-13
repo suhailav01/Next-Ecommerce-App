@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from '../products/products.module.css'
 import Link from 'next/link'
+export const metadata = {
+  title: "Fragrances list"
+}
 function Fragrances() {
   let fra = [
     {

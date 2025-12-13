@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "../products/products.module.css";
-
+export const metadata = {
+  title: "products list"
+}
 export default async function Products() {
   try {
     const res = await fetch("https://dummyjson.com/products");

@@ -1,12 +1,23 @@
 import ProductDetails from "../../components/ProductDetails";
 import { notFound } from "next/navigation";
-
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const res = await fetch(`https://dummyjson.com/products/${id}`);
+  if (!res.ok) return notFound();
+  const product = await res.json();
+  return {
+    title: product.title
+  }
+  return {
+    title: "product details"
+  }
+}
 export default async function Products({ params }) {
   const { id } = await params;
   const res = await fetch(`https://dummyjson.com/products/${id}`);
   if (!res.ok) return notFound();
   const product = await res.json();
   return (
-    <ProductDetails product={product}/>
+    <ProductDetails product={product} />
   )
 }
