@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import style from "../contact/contact.module.css";
 import { FaUser, FaPhone, FaEnvelope, FaCommentDots } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-export const metadata = {
-  title: "contact"
-}
 function Contact() {
   const [text , setText] = useState("")
   //for name

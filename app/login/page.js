@@ -2,9 +2,6 @@
 import '../login/login.css'
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-export const metadata = {
-  title: "login"
-}
 function Login() {
   const router = useRouter()
   ////////////////////////////////
